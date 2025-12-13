@@ -1,0 +1,4 @@
+
+#Secure Copy Which the private subnet .pem file to the ubuntu ec2 instance of bastian host
+scp -i /Users/rtn/Downloads/myawslogin.pem /Users/rtn/Downloads/myawslogin.pem ubuntu@44.211.182.12:/home/ubuntu
+
