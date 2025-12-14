@@ -2,3 +2,12 @@
 #Secure Copy Which the private subnet .pem file to the ubuntu ec2 instance of bastian host
 scp -i /Users/rtn/Downloads/myawslogin.pem /Users/rtn/Downloads/myawslogin.pem ubuntu@44.211.182.12:/home/ubuntu
 
+#To create intsance through AWS CLI
+aws ec2 run-instances \
+    --image-id ami-051b98ceceb268091 \
+    --instance-type t2.micro \
+    --subnet-id subnet-0cbffe39ad1d9aa58 \
+    --key-name myawslogin \
+    --security-group-ids  sg-004bb059a7740a930 \
+    --count 1 \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyInstance}]'
